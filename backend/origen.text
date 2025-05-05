@@ -1,0 +1,64 @@
+CREATE DATABASE SaludTotal;
+USE SaludTotal;
+
+CREATE TABLE usuarios (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nombre VARCHAR(100) NOT NULL,
+    email VARCHAR(100) NOT NULL UNIQUE,
+    contrasena VARCHAR(255) NOT NULL,
+    tipo_usuario ENUM('paciente', 'doctor', 'admin') NOT NULL
+);
+
+CREATE TABLE pacientes (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    usuario_id INT NOT NULL,
+    obra_social VARCHAR(100),
+    FOREIGN KEY (usuario_id) REFERENCES usuarios(id) ON DELETE CASCADE
+);
+
+CREATE TABLE especialidades (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nombre VARCHAR(100) NOT NULL UNIQUE
+);
+
+CREATE TABLE doctores (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    usuario_id INT NOT NULL,
+    especialidad_id INT NOT NULL,
+    FOREIGN KEY (usuario_id) REFERENCES usuarios(id) ON DELETE CASCADE,
+    FOREIGN KEY (especialidad_id) REFERENCES especialidades(id)
+);
+
+CREATE TABLE horarios_doctor (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    doctor_id INT NOT NULL,
+    dia_semana ENUM('lunes', 'martes', 'miércoles', 'jueves', 'viernes') NOT NULL,
+    hora_inicio TIME NOT NULL,
+    hora_fin TIME NOT NULL,
+    FOREIGN KEY (doctor_id) REFERENCES doctores(id) ON DELETE CASCADE
+);
+
+CREATE TABLE turnos (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    paciente_id INT NOT NULL,
+    doctor_id INT NOT NULL,
+    fecha DATE NOT NULL,
+    hora TIME NOT NULL,
+    estado ENUM('pendiente', 'aprobado', 'cancelado') DEFAULT 'pendiente',
+    FOREIGN KEY (paciente_id) REFERENCES pacientes(id) ON DELETE CASCADE,
+    FOREIGN KEY (doctor_id) REFERENCES doctores(id) ON DELETE CASCADE
+);
+
+CREATE TABLE doctor_especialidades (
+    doctor_id INT NOT NULL,
+    especialidad_id INT NOT NULL,
+    PRIMARY KEY (doctor_id, especialidad_id),
+    FOREIGN KEY (doctor_id) REFERENCES doctores(id) ON DELETE CASCADE,
+    FOREIGN KEY (especialidad_id) REFERENCES especialidades(id) ON DELETE CASCADE
+);
+
+INSERT INTO especialidades (nombre) VALUES 
+('Clínico'),
+('Pediatra'),
+('Cardiológico'),
+('Ginecológico');

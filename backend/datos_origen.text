@@ -1,0 +1,185 @@
+POSTMAN
+http://localhost:3001/api/auth/registro
+Content-Type: application/json
+
+{
+  "nombre": "Administrador 1",
+  "email": "admin1@saludtotal.com",
+  "contrasena": "admin1",
+  "tipo_usuario": "admin"
+}
+{
+  "nombre": "Administrador 2",
+  "email": "admin2@saludtotal.com",
+  "contrasena": "admin2",
+  "tipo_usuario": "admin"
+}
+
+-----------------------------------------------
+
+{
+  "nombre": "Dra. A. Adriana",
+  "email": "a.adriana@saludtotal.com",
+  "contrasena": "1",
+  "tipo_usuario": "doctor"
+}
+
+{
+  "nombre": "Dr. B. Benitez",
+  "email": "b.benitez@saludtotal.com",
+  "contrasena": "2",
+  "tipo_usuario": "doctor"
+}
+
+{
+  "nombre": "Dra. C. Castillo",
+  "email": "c.castillo@saludtotal.com",
+  "contrasena": "3",
+  "tipo_usuario": "doctor"
+}
+
+{
+  "nombre": "Dr. D. Diaz",
+  "email": "d.diaz@saludtotal.com",
+  "contrasena": "4",
+  "tipo_usuario": "doctor"
+}
+
+{
+  "nombre": "Dra. E. Elvira",
+  "email": "e.elvira@saludtotal.com",
+  "contrasena": "5",
+  "tipo_usuario": "doctor"
+}
+
+{
+  "nombre": "Dr. F. Fernandez",
+  "email": "f.fernandez@saludtotal.com",
+  "contrasena": "6",
+  "tipo_usuario": "doctor"
+}
+
+{
+  "nombre": "Dra. G. Gimenez",
+  "email": "g.gimenez@saludtotal.com",
+  "contrasena": "7",
+  "tipo_usuario": "doctor"
+}
+
+{
+  "nombre": "Dr. H. Herrera",
+  "email": "h.herrera@saludtotal.com",
+  "contrasena": "8",
+  "tipo_usuario": "doctor"
+}
+----------------------------------------
+{
+  "nombre": "Juan Garcia",
+  "email": "juan.garcia@gmail.com",
+  "contrasena": "1",
+  "tipo_usuario": "paciente"
+}
+
+{
+  "nombre": "Juana García",
+  "email": "juana.garcia@gmail.com",
+  "contrasena": "2",
+  "tipo_usuario": "paciente"
+}
+
+{
+  "nombre": "Juane García",
+  "email": "juane.garcia@gmail.com",
+  "contrasena": "3",
+  "tipo_usuario": "paciente"
+}
+
+{
+  "nombre": "Juani García",
+  "email": "juani.garcia@gmail.com",
+  "contrasena": "4",
+  "tipo_usuario": "paciente"
+}
+
+{
+  "nombre": "Juano García",
+  "email": "juano.garcia@gmail.com",
+  "contrasena": "5",
+  "tipo_usuario": "paciente"
+}
+
+{
+  "nombre": "Juanu García",
+  "email": "juan.garcia@gmail.com",
+  "contrasena": "6",
+  "tipo_usuario": "paciente"
+}
+
+{
+  "nombre": "Jose García",
+  "email": "jose.garcia@gmail.com",
+  "contrasena": "7",
+  "tipo_usuario": "paciente"
+}
+
+{
+  "nombre": "Josa García",
+  "email": "josa.garcia@gmail.com",
+  "contrasena": "8",
+  "tipo_usuario": "paciente"
+}
+---------------------------------------
+GET http://localhost:3001/api/doctores
+
+---------------------------------------
+POST
+http://localhost:3001/api/doctores
+Content-Type: application/json
+
+
+{
+  "doctor_id": 1,
+  "especialidad_id": 1
+}
+{
+  "doctor_id": 2,
+  "especialidad_id": 2
+}
+
+{
+  "doctor_id": 2,
+  "especialidad_id": 3
+}
+
+{
+  "doctor_id": 3,
+  "especialidad_id": 3
+}
+
+{
+  "doctor_id": 4,
+  "especialidad_id": 4
+}
+{
+  "doctor_id": 5,
+  "especialidad_id": 1
+}
+{
+  "doctor_id": 6,
+  "especialidad_id": 2
+}
+{
+  "doctor_id": 7,
+  "especialidad_id": 3
+}
+{
+  "doctor_id": 7,
+  "especialidad_id": 4
+}
+{
+  "doctor_id": 8,
+  "especialidad_id": 2
+}
+
+
+
