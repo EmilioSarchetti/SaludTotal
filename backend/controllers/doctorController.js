@@ -27,7 +27,7 @@ exports.agregarEspecialidad = (req, res) => {
       if (err.code === 'ER_DUP_ENTRY') {
         return res.status(409).json({ error: 'Ya tiene esta especialidad asignada' });
       }
-      return res.status(500).json({ error: 'Error al asignar especialidad' });
+      return res.status(500).json({ error: err.sqlMessage }); 
     }
     res.status(201).json({ mensaje: 'Especialidad asignada correctamente' });
   });
